@@ -1,9 +1,9 @@
-name: night build at 11pm
+name: night build at 10pm
 
 on:
   push:
   schedule: 
-    - cron: '0 23 * * *'
+    - cron: '0 22 * * *'
 
 jobs: 
   nightly_build: 
