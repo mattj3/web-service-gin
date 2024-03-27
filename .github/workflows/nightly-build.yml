@@ -18,7 +18,7 @@ jobs:
       - name: Go Build 
         run: go build
 
-      - uses: actions/upload-artifact@main
+      - uses: actions/upload-artifact@master
         with:
           name: test.go
           path: ./target/*test*.go
