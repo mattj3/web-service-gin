@@ -21,4 +21,4 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: test.go
-          path: ./target/*test*.go
+          path: ./target/test-results
