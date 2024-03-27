@@ -33,7 +33,7 @@ func main() {
 	router.POST("/albums", postAlbums)
 
 	// run the function to attach the router to an http.Server and start server
-	router.Run("localhost:8080")
+	router.Run("0.0.0.0:8080")
 }
 
 // write handler to return all items
@@ -70,4 +70,14 @@ func getAlbumByID(c *gin.Context) {
 		}
 	}
 	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "album not found"})
+}
+
+// Add is our function that sums two integers
+func Add(x, y int) (res int) {
+	return x + y
+}
+
+// Subtract subtracts two integers
+func Subtract(x, y int) (res int) {
+	return x - y
 }
