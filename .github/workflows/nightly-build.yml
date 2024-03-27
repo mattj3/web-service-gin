@@ -1,0 +1,24 @@
+name: night build at 11pm
+
+on:
+  push:
+  schedule: 
+    - cron: '0 23 * * *'
+
+jobs: 
+  nightly_build: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v3.3.0
+
+      - name: Run Unit Tests
+        run: go test
+
+      - name: Go Build 
+        run: go build
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: test.go
+          path: ./target/test-results
