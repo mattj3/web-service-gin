@@ -1,10 +1,10 @@
-name: Build, Deploy, Test - from user @${{ github.actor }}
+name: e2e pipeline
+run-name: Build, Deploy, Test - from user @${{ github.actor }}
 
-on: [push]
+on: [workflow_dispatch]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
